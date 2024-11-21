@@ -3,25 +3,25 @@ const questions = [
   {
     question: "What is red?",
     options: ["Apple", "Pear", "Orange", "Banana"],
-    correct: 1,
+    correct: 0,
   },
 
   {
     question: "What does the cow say?",
     options: ["Mjau", "Bæ", "Moo", "Hello"],
-    correct: 3,
+    correct: 2,
   },
 
   {
     question: "What rimes with cow?",
     options: ["Hey", "Smile", "Now", "Drown"],
-    correct: 3,
+    correct: 2,
   },
 
   {
     question: "What is my name?",
     options: ["Nora", "Petter", "Ola", "Hanne"],
-    correct: 1,
+    correct: 0,
   },
 
   {
@@ -32,25 +32,25 @@ const questions = [
       "A toy",
       "An extinct creature",
     ],
-    correct: 4,
+    correct: 3,
   },
 
   {
     question: "Is school fun?",
     options: ["No", "Yes", "Sometimes", "Never"],
-    correct: 3,
+    correct: 2,
   },
 
   {
     question: "What is our teacher´s name?",
     options: ["Reza", "Hussein", "Carl", "Heidi"],
-    correct: 1,
+    correct: 0,
   },
 
   {
     question: "What did I eat for lunch?",
     options: ["Hamburger", "Salad", "Tuna Salad", "Pizza"],
-    correct: 4,
+    correct: 3,
   },
 ];
 
@@ -67,10 +67,12 @@ const answerOptions = document.querySelector(".question__answer--options");
 const nextButton = document.querySelector(".next__question--button");
 const resultContainer = document.querySelector(".results__container");
 const scoreText = document.querySelector(".score__text");
-const reviewButtin = document.querySelector(".review__answers--button");
+const reviewButton = document.querySelector(".review__answers--button");
 const reviewContainer = document.querySelector(".review__questions--page");
 const reviewList = document.querySelector(".review__questions--list");
-const restartButton = document.querySelector(".restart__button--review");
+const restartButton = document.querySelectorAll(
+  ".restart__quiz--button, .restart__button--review"
+);
 
 // Create Element for Progress Indicator (Made in css)
 const progressIndicator = document.querySelector(".progress__indicator");
@@ -104,6 +106,58 @@ function showQuestion() {
 }
 
 // Function handleAnswer
+function handleAnswer(selectedIndex) {
+  userAnswer[currentQuestionIndex] = selectedIndex;
+  if (selectedIndex === questions[currentQuestionIndex].correct) {
+    score++;
+  }
+  nextButton.classList.remove("hidden");
+}
 
-console.log(showQuestion);
-console.log(startQuiz);
+// Function nextQuestion
+function nextQuestion() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showResults();
+  }
+}
+
+// Function showResults
+function showResults() {
+  questionsContainer.classList.add("hidden");
+  resultContainer.classList.remove("hidden");
+  scoreText.textContent = `You scored ${score} out of ${questions.length}!`;
+}
+
+// Function reviewAnswers
+function reviewAnswers() {
+  resultContainer.classList.add("hidden");
+  reviewContainer.classList.remove("hidden");
+}
+reviewList.innerHTML = questions
+  .map((q, index) => {
+    const userSelected = q.options[userAnswer[index]] || "No Answer";
+    const correctAnswer = q.options[q.correct];
+    return `<p><strong>´${q.question}</strong><br>Your Answer: ${userSelected}<br>Correct Answer: ${correctAnswer}</p>`;
+  })
+  .join("");
+
+// Function restartQuiz
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  userAnswer = [];
+  reviewContainer.classList.add("hidden");
+  resultContainer.classList.add("hidden");
+  startQuiz();
+}
+
+// Adding Event Listeners
+startButton.addEventListener("click", startQuiz);
+nextButton.addEventListener("click", nextQuestion);
+reviewButton.addEventListener("click", reviewAnswers);
+restartButton.forEach((button) =>
+  button.addEventListener("click", restartQuiz)
+);
