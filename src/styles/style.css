@@ -27,6 +27,7 @@ p {
   line-height: 3rem;
 }
 
+/* ------------------------------------- */
 .quiz__container {
   width: 40%;
   height: 80%;
@@ -67,6 +68,7 @@ p {
   display: none;
 }
 
+/* -------------------------- */
 button {
   padding: var(--spacing-xsmall);
   font-size: var(--font-size-xsmall);
@@ -75,7 +77,7 @@ button {
   background-color: var(--text-color);
   color: var(--primary-color);
   line-height: 1.5rem;
-  font-size: var(--font-size-xsmall);
+  font-size: var(--font-size-small);
   font-weight: 550;
   border: none;
 }
@@ -84,7 +86,52 @@ button:hover {
   scale: 104%;
 }
 
+/* button:active {
+  background-color: var(--primary-color);
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+} */
+
 .progress__indicator {
   margin-bottom: var(--spacing-medium);
   font-size: var(--font-size-medium);
 }
+
+.question__answer--options {
+  display: flex;
+  flex-wrap: wrap; /* Sørger for at elementene kan bryte til neste linje */
+  gap: 12px; /* Juster gapet mellom knappene */
+  padding-top: var(--spacing-large);
+  padding-bottom: var(--spacing-xlarge);
+}
+
+.question__answer--options button {
+  flex: 1 1 45%; /* Hver knapp tar opp 45% av containerens bredde, og bryter til neste linje etter 2 elementer */
+  cursor: pointer;
+  text-align: center;
+}
+
+.next__question--button {
+  width: 20%;
+}
+
+.question__image-container {
+  text-align: end;
+  /* margin-bottom: 20px; */
+}
+
+#question-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Har prøvd å legge inn en url i array for å laste inn et ulikt bilde i hvert spørsmål. Denne stylingen er ikke ferdig. spør gpt. */
+/* .questions__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  justify-content: space-between;
+} */

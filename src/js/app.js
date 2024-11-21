@@ -4,6 +4,7 @@ const questions = [
     question: "What is Ross´s second wife´s name?",
     options: ["Emily", "Susan", "Carol", "Rachel"],
     correct: 0,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -104,6 +105,7 @@ const progressIndicator = document.querySelector(".progress__indicator");
 // Function to Start Quiz
 function startQuiz() {
   document.querySelector(".start__container").classList.add("hidden");
+  document.querySelector(".start__container--picture").classList.add("hidden");
   questionsContainer.classList.remove("hidden");
   showQuestion();
 }
@@ -115,6 +117,10 @@ function showQuestion() {
   progressIndicator.textContent = `Question ${currentQuestionIndex + 1} of ${
     questions.length
   }`;
+
+  // Prøver meg frem med bilde for hvert spørsmål her.
+  const questionImage = document.getElementById("question-image");
+  questionImage.src = question.image; // Endre src til bildets URL for dette spørsmålet
 
   answerOptions.innerHTML = "";
   question.options.forEach((option, index) => {
