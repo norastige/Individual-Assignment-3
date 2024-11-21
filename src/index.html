@@ -9,6 +9,39 @@
     <title>Interactive Quiz</title>
   </head>
   <body>
+    <main>
+      <!--Container Quiz-->
+      <div class="quiz__container">
+        <!--Start Page Quiz-->
+        <div class="start__container">
+          <h1>How much do you know about X?</h1>
+          <p>Check your knowledge on xyz</p>
+          <button class="start__button">Start Quiz</button>
+        </div>
+        <!-- Question Page Quiz -->
+        <div class="questions__container--parent hidden">
+          <div class="progress_indicator"></div>
+          <div class="questions__container">
+            <h2 class="question__text"></h2>
+            <div class="question__answer--options"></div>
+          </div>
+          <button class="next__question--button hidden">Next</button>
+        </div>
+        <!-- Questions Results -->
+        <div class="results__container hidden">
+          <h2>Complete!</h2>
+          <p class="score__text"></p>
+          <button class="review__answers--button">Review Answers</button>
+          <button class="restart__quiz--button">Restart Quiz</button>
+        </div>
+        <!-- Review Questions Page -->
+        <div class="review__questions--page hidden">
+          <h2>Review Your Answers</h2>
+          <div class="review__questions--list"></div>
+          <button class="restart__button--review">Restart Quiz</button>
+        </div>
+      </div>
+    </main>
     <script src="./js/app.js"></script>
   </body>
 </html>
