@@ -1,55 +1,77 @@
 // Array containing questions and answers
 const questions = [
   {
-    question: "What is red?",
-    options: ["Apple", "Pear", "Orange", "Banana"],
+    question: "What is Ross´s second wife´s name?",
+    options: ["Emily", "Susan", "Carol", "Rachel"],
     correct: 0,
   },
 
   {
-    question: "What does the cow say?",
-    options: ["Mjau", "Bæ", "Moo", "Hello"],
+    question: "Which charachter was known for saying 'How you doin´'?",
+    options: ["Chandler", "Ross", "Joey", "Richard"],
     correct: 2,
   },
 
   {
-    question: "What rimes with cow?",
-    options: ["Hey", "Smile", "Now", "Drown"],
-    correct: 2,
-  },
-
-  {
-    question: "What is my name?",
-    options: ["Nora", "Petter", "Ola", "Hanne"],
-    correct: 0,
-  },
-
-  {
-    question: "What is a dragon?",
+    question: "What is Monica´s biggest pet peeve",
     options: [
-      "A human in disguise",
-      "An animal",
-      "A toy",
-      "An extinct creature",
+      "People chewing loudly",
+      "People not using coasters",
+      "Animals dressed as humans",
+      "People being late",
     ],
+    correct: 2,
+  },
+
+  {
+    question: "What is the name of Pheobe´s most famous song?",
+    options: [
+      "Smelly Cat",
+      "The Lion Sleeps Tonight",
+      "New York City",
+      "Grandma´s Hands",
+    ],
+    correct: 0,
+  },
+
+  {
+    question: "Which charachter was a paleontologist?",
+    options: ["Chandler", "Joey", "Monica", "Ross"],
     correct: 3,
   },
 
   {
-    question: "Is school fun?",
-    options: ["No", "Yes", "Sometimes", "Never"],
+    question:
+      "Who was the last person to find out about Monica and Chandler´s relationship?",
+    options: ["Rachel", "Pheobe", "Ross", "Joey"],
     correct: 2,
   },
 
   {
-    question: "What is our teacher´s name?",
-    options: ["Reza", "Hussein", "Carl", "Heidi"],
+    question: "What is the name of Joey´s stuffed penguin?",
+    options: ["Waddle", "Hugsy", "Pingu", "Snowball"],
+    correct: 1,
+  },
+
+  {
+    question: "What is the name of Ross and Monica´s parents?",
+    options: [
+      "Jack and Judy",
+      "Sam and Lisa",
+      "Michael and Carol",
+      "Edward and Helen",
+    ],
     correct: 0,
   },
 
   {
-    question: "What did I eat for lunch?",
-    options: ["Hamburger", "Salad", "Tuna Salad", "Pizza"],
+    question: "Which charachters got married in Las Vegas while drunk?",
+    options: [
+      "Chandler and Monica",
+      "Pheobe and Mike",
+      "Joey and Pheobe",
+      "Ross and Rachel",
+    ],
     correct: 3,
   },
 ];
