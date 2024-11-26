@@ -135,3 +135,23 @@ button:hover {
   border: 2px solid green;
   justify-content: space-between;
 } */
+
+/* Scrollbar for resultater */
+.review__questions--list {
+  max-height: 60vh; /* Begrens høyden til 60% av skjermen */
+  overflow-y: auto; /* Legger til en scrollbar siden innholdet er større enn containeren */
+  padding-right: 10px;
+}
+
+.review__questions--list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.review__questions--list::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 4px;
+}
+
+.review__questions--list::-webkit-scrollbar-thumb:hover {
+  background: darkgray;
+}

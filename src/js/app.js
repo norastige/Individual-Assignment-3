@@ -11,6 +11,7 @@ const questions = [
     question: "Which charachter was known for saying 'How you doin´'?",
     options: ["Chandler", "Ross", "Joey", "Richard"],
     correct: 2,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -22,6 +23,7 @@ const questions = [
       "People being late",
     ],
     correct: 2,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -33,12 +35,14 @@ const questions = [
       "Grandma´s Hands",
     ],
     correct: 0,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
     question: "Which charachter was a paleontologist?",
     options: ["Chandler", "Joey", "Monica", "Ross"],
     correct: 3,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -46,12 +50,14 @@ const questions = [
       "Who was the last person to find out about Monica and Chandler´s relationship?",
     options: ["Rachel", "Pheobe", "Ross", "Joey"],
     correct: 2,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
     question: "What is the name of Joey´s stuffed penguin?",
     options: ["Waddle", "Hugsy", "Pingu", "Snowball"],
     correct: 1,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -63,6 +69,7 @@ const questions = [
       "Edward and Helen",
     ],
     correct: 0,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 
   {
@@ -74,6 +81,7 @@ const questions = [
       "Ross and Rachel",
     ],
     correct: 3,
+    image: "./assets/images/friends.jpg", // Prøver meg frem
   },
 ];
 
@@ -118,9 +126,9 @@ function showQuestion() {
     questions.length
   }`;
 
-  // Prøver meg frem med bilde for hvert spørsmål her.
+  // Prøver meg frem med bilde for hvert spørsmål her. ???
   const questionImage = document.getElementById("question-image");
-  questionImage.src = question.image; // Endre src til bildets URL for dette spørsmålet
+  questionImage.src = question.image;
 
   answerOptions.innerHTML = "";
   question.options.forEach((option, index) => {
@@ -135,7 +143,11 @@ function showQuestion() {
 
 // Function handleAnswer
 function handleAnswer(selectedIndex) {
-  userAnswer[currentQuestionIndex] = selectedIndex;
+  userAnswer[currentQuestionIndex] = selectedIndex; // Lagre brukerens svar
+  console.log(
+    // Logge for å sjekke at den henter riktig informasjon
+    `Question ${currentQuestionIndex} answered with option ${selectedIndex}`
+  );
   if (selectedIndex === questions[currentQuestionIndex].correct) {
     score++;
   }
@@ -163,14 +175,20 @@ function showResults() {
 function reviewAnswers() {
   resultContainer.classList.add("hidden");
   reviewContainer.classList.remove("hidden");
+
+  reviewList.innerHTML = questions
+    .map((q, index) => {
+      const userSelectedIndex = userAnswer[index]; // Brukerens valgte indeks
+      const userSelected =
+        userSelectedIndex !== undefined &&
+        q.options[userSelectedIndex] !== undefined
+          ? q.options[userSelectedIndex]
+          : "No Answer"; // Sjekk at svaret er gyldig
+      const correctAnswer = q.options[q.correct];
+      return `<p><strong>${q.question}</strong><br>Your Answer: ${userSelected}<br>Correct Answer: ${correctAnswer}</p>`;
+    })
+    .join("");
 }
-reviewList.innerHTML = questions
-  .map((q, index) => {
-    const userSelected = q.options[userAnswer[index]] || "No Answer";
-    const correctAnswer = q.options[q.correct];
-    return `<p><strong>´${q.question}</strong><br>Your Answer: ${userSelected}<br>Correct Answer: ${correctAnswer}</p>`;
-  })
-  .join("");
 
 // Function restartQuiz
 function restartQuiz() {
