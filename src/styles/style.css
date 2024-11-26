@@ -3,6 +3,7 @@
   src: url(../assets/fonts/Montserrat.ttf);
 }
 
+/* General Styling */
 body {
   width: 100%;
   height: 100vh;
@@ -27,7 +28,11 @@ p {
   line-height: 3rem;
 }
 
-/* ------------------------------------- */
+/* .hidden {
+  display: none;
+} */
+
+/* Quiz Styling */
 .quiz__container {
   width: 40%;
   height: 80%;
@@ -40,6 +45,7 @@ p {
   justify-content: space-between;
 }
 
+/* Start Page Styling */
 .start__container {
   width: 100%;
   height: 30%;
@@ -64,11 +70,7 @@ p {
   width: 20%;
 }
 
-.hidden {
-  display: none;
-}
-
-/* -------------------------- */
+/* Button Styling */
 button {
   padding: var(--spacing-xsmall);
   font-size: var(--font-size-xsmall);
@@ -92,15 +94,34 @@ button:hover {
   color: var(--text-color);
 } */
 
+/* Progress Indicator */
 .progress__indicator {
   margin-bottom: var(--spacing-medium);
   font-size: var(--font-size-medium);
 }
 
+/* Questions */
+
+.questions__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container__questions--options {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .question__answer--options {
   display: flex;
-  flex-wrap: wrap; /* Sørger for at elementene kan bryte til neste linje */
-  gap: 12px; /* Juster gapet mellom knappene */
+  flex-wrap: wrap;
+  gap: 12px;
   padding-top: var(--spacing-large);
   padding-bottom: var(--spacing-xlarge);
 }
@@ -115,27 +136,30 @@ button:hover {
   width: 20%;
 }
 
+.options__next-container {
+  width: 100%;
+  height: 90%;
+}
+
 .question__image-container {
-  text-align: end;
-  /* margin-bottom: 20px; */
+  width: 100%;
+  height: 56%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 #question-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
-/* Har prøvd å legge inn en url i array for å laste inn et ulikt bilde i hvert spørsmål. Denne stylingen er ikke ferdig. spør gpt. */
-/* .questions__container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 2px solid green;
-  justify-content: space-between;
-} */
-
+.hidden {
+  display: none;
+}
 /* Scrollbar for resultater */
 .review__questions--list {
   max-height: 60vh; /* Begrens høyden til 60% av skjermen */

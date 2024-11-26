@@ -4,14 +4,14 @@ const questions = [
     question: "What is Ross´s second wife´s name?",
     options: ["Emily", "Susan", "Carol", "Rachel"],
     correct: 0,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/emily.jpeg",
   },
 
   {
     question: "Which charachter was known for saying 'How you doin´'?",
     options: ["Chandler", "Ross", "Joey", "Richard"],
     correct: 2,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/how_you_doin.jpg.webp",
   },
 
   {
@@ -23,7 +23,7 @@ const questions = [
       "People being late",
     ],
     correct: 2,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/monica.jpeg",
   },
 
   {
@@ -35,14 +35,14 @@ const questions = [
       "Grandma´s Hands",
     ],
     correct: 0,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/smelly-cat.jpeg",
   },
 
   {
     question: "Which charachter was a paleontologist?",
     options: ["Chandler", "Joey", "Monica", "Ross"],
     correct: 3,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/friends.jpg",
   },
 
   {
@@ -50,14 +50,14 @@ const questions = [
       "Who was the last person to find out about Monica and Chandler´s relationship?",
     options: ["Rachel", "Pheobe", "Ross", "Joey"],
     correct: 2,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/monica-chandler.jpeg",
   },
 
   {
     question: "What is the name of Joey´s stuffed penguin?",
     options: ["Waddle", "Hugsy", "Pingu", "Snowball"],
     correct: 1,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/hugsy.jpg",
   },
 
   {
@@ -69,7 +69,7 @@ const questions = [
       "Edward and Helen",
     ],
     correct: 0,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/jack-judy.jpg",
   },
 
   {
@@ -81,7 +81,7 @@ const questions = [
       "Ross and Rachel",
     ],
     correct: 3,
-    image: "./assets/images/friends.jpg", // Prøver meg frem
+    image: "./assets/images/weddings.jpg",
   },
 ];
 
