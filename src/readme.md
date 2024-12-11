@@ -1,4 +1,4 @@
-# Final Project.
+# Assignment 3.
 
 ## Table of Content
 
@@ -65,5 +65,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Links
 
-    - GitHub Repository:
-    - Netlify Deployment:
+    - GitHub Repository: https://github.com/norastige/Individual-Assignment-3.git
+    - Netlify Deployment: https://6759a7065bf8e02db31d775c--stately-haupia-d6c16f.netlify.app/
