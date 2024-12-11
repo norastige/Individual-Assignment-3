@@ -28,10 +28,6 @@ p {
   line-height: 3rem;
 }
 
-/* .hidden {
-  display: none;
-} */
-
 /* Quiz Styling */
 .quiz__container {
   width: 40%;
@@ -88,11 +84,11 @@ button:hover {
   scale: 104%;
 }
 
-/* button:active {
+button:active {
   background-color: var(--primary-color);
   border: 3px solid var(--text-color);
   color: var(--text-color);
-} */
+}
 
 /* Progress Indicator */
 .progress__indicator {
@@ -127,7 +123,7 @@ button:hover {
 }
 
 .question__answer--options button {
-  flex: 1 1 45%; /* Hver knapp tar opp 45% av containerens bredde, og bryter til neste linje etter 2 elementer */
+  flex: 1 1 45%;
   cursor: pointer;
   text-align: center;
 }
@@ -160,10 +156,10 @@ button:hover {
 .hidden {
   display: none;
 }
-/* Scrollbar for resultater */
+/* Scrollbar for results */
 .review__questions--list {
-  max-height: 60vh; /* Begrens høyden til 60% av skjermen */
-  overflow-y: auto; /* Legger til en scrollbar siden innholdet er større enn containeren */
+  max-height: 60vh;
+  overflow-y: auto;
   padding-right: 10px;
 }
 

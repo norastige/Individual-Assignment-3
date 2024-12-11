@@ -35,7 +35,7 @@ const questions = [
       "Grandma´s Hands",
     ],
     correct: 0,
-    image: "./assets/images/smelly-cat.jpeg",
+    image: "./assets/images/smelly-cat.png",
   },
 
   {
@@ -88,7 +88,7 @@ const questions = [
 // Create variables to store Question Index, Score and Users Answer
 let currentQuestionIndex = 0;
 let score = 0;
-let userAnswer = []; // Lagres i en tom array - skal være flere variabler.
+let userAnswer = [];
 
 // Get Elements from HTML Structure
 const startButton = document.querySelector(".start__button");
@@ -126,7 +126,7 @@ function showQuestion() {
     questions.length
   }`;
 
-  // Prøver meg frem med bilde for hvert spørsmål her. ???
+  // Adding pictures to each question
   const questionImage = document.getElementById("question-image");
   questionImage.src = question.image;
 
@@ -143,9 +143,8 @@ function showQuestion() {
 
 // Function handleAnswer
 function handleAnswer(selectedIndex) {
-  userAnswer[currentQuestionIndex] = selectedIndex; // Lagre brukerens svar
+  userAnswer[currentQuestionIndex] = selectedIndex;
   console.log(
-    // Logge for å sjekke at den henter riktig informasjon
     `Question ${currentQuestionIndex} answered with option ${selectedIndex}`
   );
   if (selectedIndex === questions[currentQuestionIndex].correct) {
@@ -178,12 +177,12 @@ function reviewAnswers() {
 
   reviewList.innerHTML = questions
     .map((q, index) => {
-      const userSelectedIndex = userAnswer[index]; // Brukerens valgte indeks
+      const userSelectedIndex = userAnswer[index];
       const userSelected =
         userSelectedIndex !== undefined &&
         q.options[userSelectedIndex] !== undefined
           ? q.options[userSelectedIndex]
-          : "No Answer"; // Sjekk at svaret er gyldig
+          : "No Answer";
       const correctAnswer = q.options[q.correct];
       return `<p><strong>${q.question}</strong><br>Your Answer: ${userSelected}<br>Correct Answer: ${correctAnswer}</p>`;
     })
